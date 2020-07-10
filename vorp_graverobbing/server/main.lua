@@ -1,8 +1,5 @@
-local gntw = {
-    inventario_API = {
-        API = exports.vorp_inventory:vorp_inventoryApi()
-    }
-}
+
+local API = exports.vorp_inventory:vorp_inventoryApi()
 local Loot = {
     {item = 'oldbuckle', amountToGive = math.random(4, 8)},
     {item = 'oldwatch', amountToGive = math.random(1, 5)},
@@ -33,7 +30,7 @@ AddEventHandler(
                 if HR then
                     for k, v in pairs(LootRare) do
                         if v.item == FinalLoot then
-                            gntw.inventario_API.API.addItem(_source, FinalLoot, v.amountToGive)
+                            API.addItem(_source, FinalLoot, v.amountToGive)
                             LootsToGiveR = {}
                             break
                         end
@@ -43,7 +40,7 @@ AddEventHandler(
                 else
                     for k, v in pairs(Loot) do
                         if v.item == FinalLoot then
-                            gntw.inventario_API.API.addItem(_source, FinalLoot, v.amountToGive)
+                            API.addItem(_source, FinalLoot, v.amountToGive)
                             LootsToGive = {}
                             break
                         end
